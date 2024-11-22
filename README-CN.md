@@ -2,19 +2,19 @@ Terraform module to implements Multi-Account Single Sign-On by Cloud SSO.
 
 # terraform-alicloud-landing-zone-cloudsso
 
-English | [简体中文](https://github.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/blob/main/README-CN.md)
+[English](https://github.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/blob/main/README.md) | 简体中文
 
-When enterprises adopt a multi-account cloud architecture, configuring personnel identities and permission policies for each account becomes very cumbersome and time-consuming. This module leverages the product capabilities of cloud SSO to provide a centralized way to manage identities and permissions across multiple accounts, simplifying the complexity of identity configuration for enterprise IT administrators.
+当企业采用多账号的云上架构时，配置各个账号的人员身份和权限策略将变得非常繁琐耗时。此模块基于云SSO的产品能力，提供一种集中化管理企业多账号的身份权限的方式，简化了企业IT管理人员在身份配置上的复杂度。
 
-![Structure](https://raw.githubusercontent.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/main/pictures/structure.png)
+![架构图](https://raw.githubusercontent.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/main/pictures/structure-CN.png)
 
-## Prerequisites
+## 前提条件
 
-Enable Alicloud CloudSSO
+开通阿里云云SSO服务
 
-## Usage
+## 用法
 
-Manage Alicloud CloudSSO users, groups, access configurations and access assignments with Terraform.
+通过Terraform管理阿里云云SSO内的用户、用户组、访问配置以及多账号授权。
 
 ```terraform
 provider "alicloud" {
@@ -95,10 +95,9 @@ module "cloudsso" {
 }
 ```
 
-## Examples
-
-- [Basic Example](https://github.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/tree/main/examples/basic)
-- [Complete Example](https://github.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/tree/main/examples/complete)
+## 示例
+- [基础用法](https://github.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/tree/main/examples/basic)
+- [完整用法](https://github.com/alibabacloud-automation/terraform-alicloud-landing-zone-cloudsso/tree/main/examples/complete)
 
 ## Requirements
 
@@ -146,21 +145,21 @@ module "cloudsso" {
 | <a name="output_user_attachment_ids"></a> [user\_attachment\_ids](#output\_user\_attachment\_ids) | The id of user attachments. The value formats as <directory\_id>:<group\_id>:<user\_id> |
 | <a name="output_user_ids"></a> [user\_ids](#output\_user\_ids) | The id of users. |
 
-## Submit Issues
+## 提交问题
 
-If you have any problems when using this module, please opening a [provider issue](https://github.com/aliyun/terraform-provider-alicloud/issues/new) and let us know.
+如果在使用该 Terraform Module 的过程中有任何问题，可以直接创建一个 [Provider Issue](https://github.com/aliyun/terraform-provider-alicloud/issues/new)，我们将根据问题描述提供解决方案。
 
-**Note:** There does not recommend opening an issue on this repo.
+**注意:** 不建议在该 Module 仓库中直接提交 Issue。
 
-## Authors
+## 作者
 
 Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com).
 
-## License
+## 许可
 
 MIT Licensed. See LICENSE for full details.
 
-## Reference
+## 参考
 
 - [Terraform-Provider-Alicloud Github](https://github.com/aliyun/terraform-provider-alicloud)
 - [Terraform-Provider-Alicloud Release](https://releases.hashicorp.com/terraform-provider-alicloud/)
