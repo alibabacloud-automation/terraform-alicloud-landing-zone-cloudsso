@@ -16,5 +16,5 @@ Note that this example may create resources. Run `terraform destroy` when you do
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.10 |
 | <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) |  >= 1.145.0 |
