@@ -22,7 +22,13 @@ module "cloudsso" {
 
   access_configurations = [
     {
-      access_configuration_name = "Admin"
+      access_configuration_name = "Admin",
+      permission_policies = [
+        {
+          policy_name = "AdministratorAccess",
+          policy_type = "System",
+        }
+      ]
     }
   ]
 

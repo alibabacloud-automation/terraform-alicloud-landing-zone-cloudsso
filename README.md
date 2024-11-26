@@ -14,7 +14,7 @@ Enable Alicloud CloudSSO
 
 ## Usage
 
-Manage Alicloud CloudSSO users, groups, access configurations and access assignments with Terraform.
+Manage Alicloud CloudSSO users, groups, access configurations and access assignments with Terraform. If you have already created users and groups through SCIM synchronization or other methods, the users and groups parameters could be set to empty list or ignored.
 
 ```terraform
 provider "alicloud" {
@@ -104,7 +104,7 @@ module "cloudsso" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.10 |
 | <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) |  >= 1.145.0 |
 
 ## Providers
@@ -131,10 +131,10 @@ module "cloudsso" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_access_assignments"></a> [access\_assignments](#input\_access\_assignments) | A list of access assignments in which each element contains the following attributes: The principal\_namecan be either a user name or a group name, depending on the principal\_type (valid values: User, Group). The access\_configurations should be a list of access configurations names. The accounts should be a list of account IDs which could contain the master account or member accounts in Resource Directory. | <pre>list(object({<br/>    principal_name = string<br/>    principal_type = string<br/>    access_configurations = list(string)<br/>    accounts = list(string)<br/>  }))</pre> | `[]` | no |
-| <a name="input_access_configurations"></a> [access\_configurations](#input\_access\_configurations) | A list of cloud sso access configurations in which each element contains the following attributes. The access\_configuration\_name must be unique in cloud sso. The value of session\_duration(Unit: Seconds) should between 900 to 43200. The permission policies is a list of Policy which will be assigned to the access configuration. The permission\_policy\_type can be either System or Inline. If permission\_policy\_type is set to Inline, permission\_policy\_document is required. | <pre>list(object({<br/>    access_configuration_name = string<br/>    description = optional(string)<br/>    session_duration = optional(number)<br/>    permission_policies = optional(list(object({<br/>      policy_name = string<br/>      policy_type = string<br/>      policy_document = optional(string)<br/>    })), [])<br/>  }))</pre> | `[]` | no |
-| <a name="input_groups"></a> [groups](#input\_groups) | A list of cloud sso groups. The group\_name must be unique in cloud sso and the users is a list of user name. | <pre>list(object({<br/>    group_name = string<br/>    description = optional(string)<br/>    users = optional(list(string), [])<br/>  }))</pre> | `[]` | no |
-| <a name="input_users"></a> [users](#input\_users) | A list of cloud sso users. The user\_name must be unique in cloud sso. | <pre>list(object({<br/>    user_name = string<br/>    display_name = optional(string)<br/>    first_name = optional(string)<br/>    last_name = optional(string)<br/>    email = optional(string)<br/>    description = optional(string)<br/>  }))</pre> | `[]` | no |
+| <a name="input_access_assignments"></a> [access\_assignments](#input\_access\_assignments) | A list of access assignments in which each element contains the following attributes: The principal\_namecan be either a user name or a group name, depending on the principal\_type (valid values: User, Group). The access\_configurations should be a list of access configurations names. The accounts should be a list of account IDs which could contain the master account or member accounts in Resource Directory. | <pre>list(object({<br/>    principal_name        = string<br/>    principal_type        = string<br/>    access_configurations = list(string)<br/>    accounts              = list(string)<br/>  }))</pre> | `[]` | no |
+| <a name="input_access_configurations"></a> [access\_configurations](#input\_access\_configurations) | A list of cloud sso access configurations in which each element contains the following attributes. The access\_configuration\_name must be unique in cloud sso. The value of session\_duration(Unit: Seconds) should between 900 to 43200. The permission policies is a list of Policy which will be assigned to the access configuration. The permission\_policy\_type can be either System or Inline. If permission\_policy\_type is set to Inline, permission\_policy\_document is required. | <pre>list(object({<br/>    access_configuration_name = string<br/>    description               = optional(string)<br/>    session_duration          = optional(number)<br/>    permission_policies = optional(list(object({<br/>      policy_name     = string<br/>      policy_type     = string<br/>      policy_document = optional(string)<br/>    })), [])<br/>  }))</pre> | `[]` | no |
+| <a name="input_groups"></a> [groups](#input\_groups) | A list of cloud sso groups. The group\_name must be unique in cloud sso and the users is a list of user name. | <pre>list(object({<br/>    group_name  = string<br/>    description = optional(string)<br/>    users       = optional(list(string), [])<br/>  }))</pre> | `[]` | no |
+| <a name="input_users"></a> [users](#input\_users) | A list of cloud sso users. The user\_name must be unique in cloud sso. | <pre>list(object({<br/>    user_name    = string<br/>    display_name = optional(string)<br/>    first_name   = optional(string)<br/>    last_name    = optional(string)<br/>    email        = optional(string)<br/>    description  = optional(string)<br/>  }))</pre> | `[]` | no |
 
 ## Outputs
 
